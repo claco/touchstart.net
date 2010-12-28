@@ -1,0 +1,16 @@
+<%= form_tag root_url do |f| %>
+  <p>
+    <%= search_field_tag :search %>
+    <%= submit_tag 'Search' %>
+  </p>
+<% end %>
+
+<% if @domains.length %>
+  <div class="domains">
+    <% for domain in @domains %>
+      <div class="domain">
+        <%= domain['domain'] %> - <%= domain['availability'] %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
